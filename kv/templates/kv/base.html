@@ -1,0 +1,2523 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+        type="text/css">
+    
+        <link rel="stylesheet" href=" {% static 'kv/assets/style.css' %}">
+        <link rel="stylesheet" href="{% static 'kv/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <div id="popup_2" class="popup">
+    
+        <div class="popup__body2">
+            <div class="popup__content2">
+               
+                <div class="nev_pop" ><img src=" {% static 'kv/ModalLogo.png' %} " alt=""></div>
+                <a href="{% url 'building' %}"><button type="submit" class="bttn btn-primary">Выбрать квартиру</button></a>
+                
+                      
+                   
+                </div>
+            </div>
+        </div>
+    <section class="apartments" id="1">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1 id="popcorn">Планировка 1 этаж</h1>
+            </div>
+        </div>
+        <div class="middle_c">
+        
+            <div class="floorplan_c">
+                {% for commercial_1 in commercial_floor_1 %}
+                    <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                    <a href="">
+                    {% if "19,30" in commercial_1.area  %}<div class="{{commercial_1.available}} c19_3"></div>{% endif %}
+                    </a>
+                    <a href="">
+                    {% if "56,20" in commercial_1.area  %}<div class="c56_20 {{commercial_1.available}} "></div>{% endif %}
+                    </a>
+                    <a href="">
+                    {% if "64,55" in commercial_1.area  %}<div class="c64_55 {{commercial_1.available}} "></div>{% endif %}
+                    </a>
+                    <a href="">
+                    {% if "61,70" in commercial_1.area  %}<div class="c61_7 {{commercial_1.available}} "></div>{% endif %}
+                    </a>
+                    <a href="">
+                    {% if "47,60" in commercial_1.area  %}<div class="c47_6 {{commercial_1.available}} "></div>{% endif %}
+                    </a>
+                    <a href="">
+                    {% if "122,10" in commercial_1.area  %}<div class="c122_10 {{commercial_1.available}} "></div>{% endif %}
+                    </a>
+
+                    {% if "42,20" in commercial_1.area  %}<div class="c42_20 {{commercial_1.available}}"></div>{% endif %}
+                    </a>
+                 {% endfor %}
+            </div>
+            
+        </div>
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+    <section class="apartments" id="2">
+
+        <div class="top row col-xs-12">
+            <div class="toptext"><a href="{% url 'building' %}"> <img src="{% static 'kv/back.png' %}" alt=""></a>
+               
+                <h1 id="popcorn">Планировка 2 этаж</h1>
+            </div>
+        </div>
+        <div class="middle_c">
+
+            <div class="floorplan_c2">
+                {% for commercial_2 in commercial_floor_2 %}
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                <a href="">
+                  {% if '63 (1-L-sleva)' in commercial_2.area %}<div class="c63l {{commercial_2.available}}"></div> {% endif %}
+                </a>
+                <a href="">
+                  {% if '41,90' in commercial_2.area %}   <div class="c41_9 {{commercial_2.available}}"></div> {% endif %}
+                </a>
+                <a href="">
+                  {% if '40,80' in commercial_2.area %}   <div class="c40_8 {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                  {% if '39,90 (1-L-sleva)' in commercial_2.area %}   <div class="c39_90l {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                   {% if '39,90 (2-R-sprava)' in commercial_2.area %}  <div class="c39_90r {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                  {% if '42,60' in commercial_2.area %}   <div class="c42_60 {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                  {% if '30,15' in commercial_2.area %}   <div class="c30_15 {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                  {% if '33,75' in commercial_2.area %}   <div class="c33_75 {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                <a href="">
+                   {% if '63 (2-R-sprava)' in commercial_2.area %}  <div class="c63r {{commercial_2.available}}"></div>{% endif %}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+    <section class="apartments third " id="3">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 3 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor3 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a class="modal-show" href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+  <section class="apartments"  id="4">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 4 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor4 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="5">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 5 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor5 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="6">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 6 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor6 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="7">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 7 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor7 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="8">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 8 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor8 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+<section class="apartments"  id="9">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 9 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor9 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="10">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 10 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor10 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="11">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 11 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor11 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments"  id="12">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 12 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor12 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+
+<section class="apartments"  id="13">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 13 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor13 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+
+<section class="apartments" id="14">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 14 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor14 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+
+<section class="apartments" id="15">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 15 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor15 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+<section class="apartments" id="16">
+
+        <div class="top row col-xs-12">
+            <div class="toptext">
+                <a href="{% url 'building' %}">
+                <img src="{% static 'kv/back.png' %}" alt=""></a>
+                <h1>Планировка 16 этаж</h1>
+            </div>
+        </div>
+
+
+        <div class="middle">
+
+            <div class="floorplan">
+                <!--<img src="{% static 'kv/plan.jpg'%} " alt="" usemap="#test">-->
+                {% for kv in floor16 %}
+                <a href="">
+                    <div class="lift"></div>
+                </a>
+                {% if '100,1' in kv.area %}<a href="#modal">
+                    <div class="p3_100 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '46,5' in kv.area %}<a href="#modal1_465">
+                    <div class="p1_46 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,5' in kv.area %}<a class="modal-show" href="#modal1_43">
+                    <div class="p1_43 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '43,8' in kv.area %}<a class="modal-show" href="#modal1_438">
+                    <div class="p1_438 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '49,2' in kv.area %}<a href="#modal1_49">
+                    <div class="p1_49 {{kv.available}}"></div>
+                </a> {% endif %}
+                {% if '72,1' in kv.area %}<a href="#modal1_721">
+                    <div class="p2_72 {{kv.available}}"></div>
+                </a>{% endif %}
+                {% if '93,2' in kv.area %}<a href="#modal1_932">
+                    <div class="p3_93 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% if '72,4' in kv.area %}<a href="#modal1_724">
+                    <div class="p2_724 {{kv.available}} "></div>
+                </a>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="bottom col-xs-12"></div>
+
+    </section>
+
+
+
+
+    <!-- Parking -->
+    <section class="apartment-plan" id="parking222">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <a href="{% url 'main' %}"><img src="{% static 'kv/back.png' %}" alt=""></a>
+                    <h3>Выбрать паркинг</h3>
+                </div>
+
+                <div class="parking_plan" alt="Выбрать паркинг -- Невский">
+                   <!-- <img src="{% static 'kv/parking.jpg' %}" style=" width: 800px "alt="">-->
+                    <div class="parking_numbers"></div>
+                {% for parking in parkings  %}
+                  {% if '1' in parking.spot%}  <div class="p1 {{ parking.available}} "></div> {% endif %}
+                  {% if '2' in parking.spot%}  <div class="p2 {{ parking.available}} "></div> {% endif %}
+                  {% if '3' in parking.spot%}  <div class="p3 {{ parking.available}} "></div> {% endif %}
+                  {% if '4' in parking.spot%}  <div class="p4 {{ parking.available}} "></div> {% endif %}
+                  {% if '5' in parking.spot%}  <div class="p5 {{ parking.available}} "></div> {% endif %}
+                  {% if '6' in parking.spot%}  <div class="p6 {{ parking.available}} "></div> {% endif %}
+                  {% if '7' in parking.spot%}  <div class="p7 {{ parking.available}} "></div> {% endif %}
+                  {% if '8' in parking.spot%}  <div class="p8 {{ parking.available}} "></div> {% endif %}
+                  {% if '9' in parking.spot%}  <div class="p9 {{ parking.available}} "></div> {% endif %}
+                  {% if '10' in parking.spot%}  <div class="p10 {{parking.available}} "></div> {% endif %}
+                  {% if '11' in parking.spot%}  <div class="p11 {{parking.available}} "></div> {% endif %}
+                  {% if '12' in parking.spot%}  <div class="p12 {{parking.available}} "></div> {% endif %}
+                  {% if '13' in parking.spot%}  <div class="p13 {{parking.available}} "></div> {% endif %}
+                  {% if '14' in parking.spot%}  <div class="p14 {{parking.available}} "></div> {% endif %}
+                  {% if '15' in parking.spot%}  <div class="p15 {{parking.available}} "></div> {% endif %}
+                  {% if '16' in parking.spot%}  <div class="p16 {{parking.available}} "></div> {% endif %}
+                  {% if '17' in parking.spot%}  <div class="p17 {{parking.available}} "></div> {% endif %}
+                  {% if '18' in parking.spot%}  <div class="p18 {{parking.available}} "></div> {% endif %}
+                  {% if '19' in parking.spot%}  <div class="p19 {{parking.available}} "></div> {% endif %}
+                  {% if '20' in parking.spot%}  <div class="p20 {{parking.available}} "></div> {% endif %}
+                  {% if '21' in parking.spot%}  <div class="p21 {{parking.available}} "></div> {% endif %}
+                  {% if '22' in parking.spot%}  <div class="p22 {{parking.available}} "></div> {% endif %}
+                  {% if '23' in parking.spot%}  <div class="p23 {{parking.available}} "></div> {% endif %}
+                  {% if '24' in parking.spot%}  <div class="p24 {{parking.available}} "></div> {% endif %}
+                  {% if '25' in parking.spot%}  <div class="p25 {{parking.available}} "></div> {% endif %}
+                  {% if '26' in parking.spot%}  <div class="p26 {{parking.available}} "></div> {% endif %}
+                  {% if '27' in parking.spot%}  <div class="p27 {{parking.available}} "></div> {% endif %}
+                  {% if '28' in parking.spot%}  <div class="p28 {{parking.available}} "></div> {% endif %}
+                  {% if '29' in parking.spot%}  <div class="p29 {{parking.available}} "></div> {% endif %}
+                {% endfor %}
+                </div>
+
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <img src="{% static 'kv/available_box.png' %}  " alt="">
+                        <h4>Свободные места</h4>
+                    </div>
+                    <div>
+                       <img src="{% static 'kv/not_available_box.png' %}  " alt="">
+                        <h4>Занятые места</h4>
+                    </div>
+                    <div class="shouldbegone">
+                        <img src="{% static 'kv/lift_parking.png' %}" alt="" style="width: 63px">
+                        <p>Лифт</p>
+                    </div>
+                    <div class="shouldbegone">
+                        <p>Номер помещения</p>
+                        <p>31</p>
+                    </div>
+                </div>
+
+
+                <div class="contact-block-parking">
+                    <div>
+                        <p>Цена</p>
+                        <p>250.000 руб</p>
+                    </div>
+
+                    <div>
+                        <p>Площадь</p>
+                        <p>13.2 &#x33A1;</p>
+                    </div>
+
+                    <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>1 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-1-435" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>43.5 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>5.10</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>23.20</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.60</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>1 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-1-438" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>43.8 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>5.10</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>23.20</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.60</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>1 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-1-465" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>46.5 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>5.10</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>23.20</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.60</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>1 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-1-492" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>49.2 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>5.10</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>23.20</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.60</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>2 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-2-721" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>72.1 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>35</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>11.70</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>18.60</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>20.40</h3>
+                    </div>
+                    <div>
+                        <h3>Спальня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.14</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>2 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-2-724" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>72.4 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>11.70</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>18.60</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>20.40</h3>
+                    </div>
+                    <div>
+                        <h3>Спальня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.14</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>3 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-3-93" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>93.2 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>7.40</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>39.70</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>20.70</h3>
+                    </div>
+                    <div>
+                        <h3>Спальня</h3>
+                        <h3>20.40</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>5.00</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section class="apartment-plan">
+
+        <div class="apartment-info-container">
+
+            <div class="apartment-image">
+                <div class="apartment-image-top">
+                    <img src="{% static 'kv/back.png' %}" alt="">
+                    <h3>3 Комнатная Квартира</h3>
+                </div>
+                <div class="apartment-image-body-3-100" alt="qwe">
+                </div>
+
+                <div class="btns">
+                    <div class="simple-img">Планировка</div>
+                    <div class="d3-img">3D Планировка</div>
+                </div>
+                <div class="apartment-image-bottom">test</div>
+            </div>
+
+
+            <div class="apartment-info">
+                <div class="apartment-info-block">
+                    <div>
+                        <h3>Цена</h3>
+                        <h3>1 700 000 руб.</h3>
+                    </div>
+                    <div>
+                        <h3>Площадь</h3>
+                        <h3>100.1 &#x33A1;</h3>
+                    </div>
+                    <div>
+                        <h3>этаж</h3>
+                        <h3>8</h3>
+                    </div>
+                    <div>
+                        <h3>Номер помещения</h3>
+                        <h3>31</h3>
+                    </div>
+                </div>
+
+                <div class="apartment-info-block-2">
+                    <div>
+                        <h3>Прихожая</h3>
+                        <h3>5.10</h3>
+                    </div>
+                    <div>
+                        <h3>Кухня</h3>
+                        <h3>17.30</h3>
+                    </div>
+                    <div>
+                        <h3>Гостиная</h3>
+                        <h3>23.20</h3>
+                    </div>
+                    <div>
+                        <h3>Сан. узел</h3>
+                        <h3>3.60</h3>
+                    </div>
+                </div>
+
+                <div class="contact-block">
+                    <div class="contactbtn">Отправить заявку</div>
+                    <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <div id="yesavailable" style="display: none;">
+        <p style="color: black;">Данный объект</p>
+        <small style="color: white; background-color: #0FAF3C;
+        ; padding: 2px 5px; border: 1px solid #0FAF3C; border-radius: 5px;">Свободен</small>
+    </div>
+
+    <div id="notavailable" style="display: none;">
+        <p style="color: black;">Данный объект</p>
+        <small style="color: white; background-color: #fc4445;
+        ; padding: 2px 5px; border: 1px solid #fc4445; border-radius: 5px;">Занят</small>
+    </div>
+
+  
+    <div id="page">
+
+        <div class="menu">
+            <article class="content-area">
+  
+    
+          
+      
+
+          
+                
+                <div class="modal" id="modal">
+                    <div class="modal-content">
+                       <section class="apartment-plan">
+           
+                           <div class="apartment-info-container">
+                   
+                               <div class="apartment-image">
+                                   <div class="apartment-image-top">
+                                       <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                      
+                                       <h3>3 Комнатная Квартира</h3>
+                                   </div>
+                                   <div class="apartment-image-body-3-100" alt="qwe">
+                                   </div>
+                   
+                                   <div class="btns">
+                                       <div class="simple-img">Планировка</div>
+                                       <div class="d3-img">3D Планировка</div>
+                                   </div>
+                                   <div class="apartment-image-bottom"></div>
+                               </div>
+                   
+                   
+                               <div class="apartment-info">
+                                   <div class="apartment-info-block">
+                                       <div>
+                                           <h3>Цена</h3>
+                                           <h3>1 700 000 руб.</h3>
+                                       </div>
+                                       <div>
+                                           <h3>Площадь</h3>
+                                           <h3>100.1 &#x33A1;</h3>
+                                       </div>
+                                       <div>
+                                           <h3>этаж</h3>
+                                           <h3>8</h3>
+                                       </div>
+                                       <div>
+                                           <h3>Номер помещения</h3>
+                                           <h3>31</h3>
+                                       </div>
+                                   </div>
+                   
+                                   <div class="apartment-info-block-2">
+                                       <div>
+                                           <h3>Прихожая</h3>
+                                           <h3>5.10</h3>
+                                       </div>
+                                       <div>
+                                           <h3>Кухня</h3>
+                                           <h3>17.30</h3>
+                                       </div>
+                                       <div>
+                                           <h3>Гостиная</h3>
+                                           <h3>23.20</h3>
+                                       </div>
+                                       <div>
+                                           <h3>Сан. узел</h3>
+                                           <h3>3.60</h3>
+                                       </div>
+                                   </div>
+                   
+                                   <div class="contact-block">
+                                    <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                       <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                   
+                   
+                                   </div>
+                   
+                   
+                               </div>
+                   
+                   
+                           </div>
+                   
+                       </section>
+                    </div>
+                </div>
+
+
+                <div class="modal" id="modal1_43">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+ 
+                            <div class="apartment-info-container">
+                        
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                       <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                     
+                                        <h3>1 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-1-435" alt="qwe">
+                                    </div>
+                        
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                        
+                        
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>43.5 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>5.10</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>23.20</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.60</h3>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                        
+                        
+                                    </div>
+                        
+                        
+                                </div>
+                        
+                        
+                            </div>
+                        
+                        </section>
+                   
+                   </div>
+                 </div>
+
+            
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_438">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                     
+                                       
+                                        <h3>1 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-1-438" alt="qwe">
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>43.8 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>5.10</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>23.20</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.60</h3>
+                                        </div>
+                                    </div>
+                    
+
+
+
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_465">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                        
+                                        <h3>1 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-1-465" alt="qwe">
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>46.5 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>5.10</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>23.20</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.60</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_49">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                        <h3>1 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-1-492" alt="qwe">
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>49.2 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>5.10</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>23.20</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.60</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                    
+                    
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_721">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                        <h3>2 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-2-721" alt="qwe">
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>72.1 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>35</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>11.70</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>18.60</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>20.40</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Спальня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.14</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                    
+                    
+                    
+                    
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_724">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                        <h3>2 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-2-724" alt="qwe">
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img">3D Планировка</div>
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>72.4 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>11.70</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>18.60</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>20.40</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Спальня</h3>
+                                            <h3>17.30</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>3.14</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                    
+                    
+                    
+                    
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+                 <div class="modal" id="modal1_932">
+                    <div class="modal-content">
+                        <section class="apartment-plan">
+
+                            <div class="apartment-info-container">
+                    
+                                <div class="apartment-image">
+                                    <div class="apartment-image-top">
+                                        <a class="close" href="#third"> <img class="close" src="{% static 'kv/back.png' %}" alt=""></a>
+                                        <h3>3 Комнатная Квартира</h3>
+                                    </div>
+                                    <div class="apartment-image-body-3-93" alt="qwe">
+
+                                          
+                                    
+  
+                                </br>
+
+                                    <div class="opacity"><a href="#">Opacity</a></div>
+
+                                    </div>
+                    
+                                    <div class="btns">
+                                        <div class="simple-img">Планировка</div>
+                                        <div class="d3-img button-opacity "> 3D Планировка</div>
+                                        
+                                    </div>
+                                    <div class="apartment-image-bottom">test</div>
+                                </div>
+                    
+                    
+                                <div class="apartment-info">
+                                    <div class="apartment-info-block">
+                                        <div>
+                                            <h3>Цена</h3>
+                                            <h3>1 700 000 руб.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Площадь</h3>
+                                            <h3>93.2 &#x33A1;</h3>
+                                        </div>
+                                        <div>
+                                            <h3>этаж</h3>
+                                            <h3>8</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Номер помещения</h3>
+                                            <h3>31</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="apartment-info-block-2">
+                                        <div>
+                                            <h3>Прихожая</h3>
+                                            <h3>7.40</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Кухня</h3>
+                                            <h3>39.70</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Гостиная</h3>
+                                            <h3>20.70</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Спальня</h3>
+                                            <h3>20.40</h3>
+                                        </div>
+                                        <div>
+                                            <h3>Сан. узел</h3>
+                                            <h3>5.00</h3>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="contact-block">
+                                        <div class="contactbtn  popup-link" href="#popup">  Отправить заявку</div>
+                                        <p>Позвоните нам:<br><span>8 (861) 277 56 63</span></p>
+                    
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                    
+                    
+                            </div>
+                    
+                        </section>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                   
+                   </div>
+                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </article>
+
+        </div>
+    </div>
+
+
+    
+
+    
+
+
+
+
+      
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script type="text/javascript">
+
+        tippy(' .yes', {
+            content: yesavailable.innerHTML,
+            allowHTML: true,
+            theme: "yesavailable"
+        });
+        tippy(' .no', {
+            content: notavailable.innerHTML,
+            allowHTML: true,
+            theme: "yesavailable"
+        });
+    </script>
+
+<script>var opacity = document.querySelector('.opacity'),
+    bOpacity  = document.querySelector('.button-opacity');
+    
+
+
+
+function hiddenOpacity() {
+  if (opacity.classList.contains('click-opacity')) {
+    opacity.classList.remove('click-opacity');
+  } else {
+    opacity.classList.add('click-opacity');
+  }
+}
+
+
+
+function buttonclick() {
+ 
+  bOpacity.addEventListener('click', hiddenOpacity);
+ 
+}
+
+buttonclick();
+</script>
+
+
+
+
+
+
+   <div class="SEC">
+</div>
+
+
+<div class="menu">
+
+   <nav class="navbar">
+    
+       <div class="logo_bar">
+        <a href="{% url 'home' %}" class="nav-link"><img class="logo_bari" src=" {% static 'kv/logo.png' %} "  alt=""></div></a>
+         
+       <div class="hamburger-menu">
+<div class="lines lines-1"></div>
+<div class="lines lines-2"></div>
+<div class="lines lines-3"></div>
+       </div>
+      
+   </nav>
+</div>
+
+
+
+
+
+<div id="popup" class="popup">
+
+<div class="popup__body">
+    <div class="popup__content">
+        
+        <form method="POST">
+        {% csrf_token %}
+     <div class="popup__title">ЗАКАЗАТЬ ЗВОНОК </div>
+     <div class="popup__text">
+         <div class="form-group">
+             <label class="input_label" for="exampleInputEmail1">Имя</label>
+             <input type="text" name="name" class="form-control form_fonts" >
+             
+           </div>
+           <div class="form-group">
+             <label class="input_label">Фамилия</label>
+             <input type="text" name="surname" class="form-control form_fonts"  >
+           </div>
+           <div class="form-group">
+               <label class="input_label" >Телефон</label>
+               <input  class="form-control form_fonts" name="phone_number" type="tel" >
+             </div>
+           
+           <button  type="submit" class="btn btn-primary">Отправить</button>
+           
+         </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+<script src=" {% static 'kv/assets/js/script.js' %} "></script>
+<script>
+
+/**
+* @brief Reset timer for scrolling right
+*/
+function resetTimer() {
+clearInterval(timerId);
+timerId = setInterval(scrollRight, 7000);
+}
+
+// Scroll Events
+slider.addEventListener("click", function (ev) {
+if (ev.target === leftArrow) {
+scrollLeft();
+resetTimer();
+}
+});
+
+slider.addEventListener("click", function (ev) {
+if (ev.target === rightArrow) {
+scrollRight();
+resetTimer();
+}
+});
+
+</script>
+
+
+</body>
+
+</html>

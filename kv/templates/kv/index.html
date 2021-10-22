@@ -1,0 +1,230 @@
+<!--
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=" {% static 'kv/assets/style.css' %}">
+
+
+</head>
+<body>
+--> 
+<div class="SEC">
+        <div class="x">В ЦЕНТРЕ</div>
+          <div class="y">НОВОЙ</div>
+          <div class="z">ИСТОРИИ</div>
+       <img src=" {% static 'kv/Главная1.png' %} " alt="">
+       
+       <div class="header-gradient"></div>
+       
+       <div class="header">
+            <div class="header-logo">
+                <img src=" {% static 'kv/logo1.png' %} " alt="">
+            </div>
+
+
+            <div class="header-text">
+                <div class="header-number flat_choose popup-link"  href="#popup">
+                <p>Заказать звонок</p>
+                <p>8 (865) 291 20 91</p>
+                </div>
+
+                <div class="box5 flat_choose popup-link" href="#popup_2">
+                    ВЫБРАТЬ КВАРТИРУ
+                </div>
+
+
+            </div>
+       </div>
+
+        
+
+       
+       
+       
+</div>
+       
+       <div class="SEC">
+
+          
+           <div class="Odome">
+               <h1 class="O_dome"> О ДОМЕ</h1>
+               <p class="Dom_desc"> ЖК «Невский» - это уникальный в своём исполнении дом бизнес-класса, расположенный в историческом центре города Ставрополь. Благодаря этому, в ближайшей доступности имеется вся необходимая инфраструктура: детские сады, школы, больницы, магазины, парковые зоны и другое. «Невский» воплощает лучшие достижения современной архитектуры с идеальной конфигурацией и изысканными элементами.
+                   Мы уделили пристальное внимание системе безопасности, поэтому установили круглосуточное видеонаблюдение и видеодомофоны, а ограждение придомовой территории делает пространство двора ещё безопаснее и комфортнее.
+                   Ваш дом - это не только квартира. Наличие собственной детской площадки, лаунж зона, подземная и открытая парковки, территория для выгула собак и многое другое - гармоничное инженерное решение, создающее все условия для благополучного проживания.
+               </p>
+
+           </div>
+        
+
+
+
+           <img src=" {% static 'kv/Главная21.png' %} " alt="">
+        </div>
+           
+    
+
+</div>
+<div class="Gallery" id="Gallery"> 
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <div class="slider">
+      <div class="slider__slide slider__slide_yellow">
+        
+        <img class="galery_pic" src=" {% static 'kv/4.jpg' %} " alt=""></div>
+      <div class="slider__slide slider__slide_red"><img  class="galery_pic" src=" {% static 'kv/5.jpg' %} " alt=""></div>
+      <div class="slider__slide slider__slide_purple"><img  class="galery_pic" src=" {% static 'kv/6.jpg' %} " alt=""></div>
+      <div class="slider__slide slider__slide_dark-purple"><img class="galery_pic" src=" {% static 'kv/2.jpg' %} " alt=""></div>
+     
+      <div class="left-arrow"><img  src=" {% static 'kv/leftarrow.png' %} "  alt=""></div>
+      <div class="right-arrow"><img  src=" {% static 'kv/rightarrow.png' %} "  alt=""></div>
+    </div>
+
+</div>
+
+   <div class="menu">
+    <div class="call popup-link" href="#popup">
+      <img src=" {% static 'kv/call.png' %} " alt="">
+  </div>
+       <nav class="navbar">
+        
+           <div class="logo_bar">
+            <a href="{% url 'home' %}" class="nav-link"><img class="logo_bari" src=" {% static 'kv/logo.png' %} "  alt=""></div></a>
+             
+           <div class="hamburger-menu">
+<div class="lines lines-1"></div>
+<div class="lines lines-2"></div>
+<div class="lines lines-3"></div>
+           </div>
+           <ul class="nav-list">
+<li class="nav-item">
+   <a href="#" class="nav-link">О коплексе</a>
+</li>
+<li class="nav-item">
+   <a href="#Gallery" class="nav-link">Галерея</a>
+</li>
+<li class="nav-item">
+   <a href="#" class="nav-link">Преимущества</a>
+</li>
+<li class="nav-item">
+   <a href="{% url 'building' %}" class="nav-link">Выберите квартиру</a>
+</li>
+<li class="nav-item">
+   <a href="{% url 'home' %}#parking222" class="nav-link">Выберите парковку</a>
+</li>
+<li class="nav-item">
+   <a href="#" class="nav-link">Документация</a>
+</li>
+<li class="nav-item">
+   <a href="#" class="nav-link">Ход строительства</a>
+</li>
+<li class="nav-item">
+   <a href="#" class="nav-link">Контакты</a>
+</li>
+           </ul>
+       </nav>
+   </div>
+
+
+
+
+
+<div id="popup" class="popup">
+    
+    <div class="popup__body">
+        <div class="popup__content">
+            
+            <form method="POST">
+            {% csrf_token %}
+         <div class="popup__title">ЗАКАЗАТЬ ЗВОНОК </div>
+         <div class="popup__text">
+             <div class="form-group">
+                 <label class="input_label" for="exampleInputEmail1">Имя</label>
+                 <input type="text" name="name" class="form-control form_fonts" >
+                 
+               </div>
+               <div class="form-group">
+                 <label class="input_label">Фамилия</label>
+                 <input type="text" name="surname" class="form-control form_fonts"  >
+               </div>
+               <div class="form-group">
+                   <label class="input_label" >Телефон</label>
+                   <input  class="form-control form_fonts" name="phone_number" type="tel" >
+                 </div>
+               
+               <button type="submit" class="btn btn-primary">Отправить</button>
+               
+             </form>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+<div id="popup_2" class="popup">
+    
+    <div class="popup__body2">
+        <div class="popup__content2">
+           
+            <div class="nev_pop" ><img src=" {% static 'kv/ModalLogo.png' %} " alt="">
+            </div>
+            <a href="{% url 'building' %}"><button type="submit" class="bttn btn-primary">Выбрать квартиру</button></a>
+            
+                  
+               
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    
+</div>
+  
+
+
+
+</div>
+
+
+<script src=" {% static 'kv/assets/js/script.js' %} "></script>
+<script>
+    
+/**
+ * @brief Reset timer for scrolling right
+ */
+function resetTimer() {
+  clearInterval(timerId);
+  timerId = setInterval(scrollRight, 7000);
+}
+
+// Scroll Events
+slider.addEventListener("click", function (ev) {
+  if (ev.target === leftArrow) {
+    scrollLeft();
+    resetTimer();
+  }
+});
+
+slider.addEventListener("click", function (ev) {
+  if (ev.target === rightArrow) {
+    scrollRight();
+    resetTimer();
+  }
+});
+
+</script>
+
+
+<!--
+</body>
+</html>
+-->
+   

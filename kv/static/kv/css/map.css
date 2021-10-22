@@ -1,0 +1,169 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family:Cuttoff Pro ;
+   src: url(../fonts/CutoffPro.ttf);
+}
+@font-face {
+   font-family:Gotham Pro ;
+   src: url(../fonts/GothamPro.ttf);
+}
+
+
+
+.map{
+   position: relative;
+   height: 100vh;
+}
+.map iframe{
+   position: absolute;
+   width: 100%;
+   margin-left: auto;
+   height: 100vh;
+   left: 0px;
+}
+
+
+
+.info{
+   height: 100vh;
+    background-color: #096073;
+   position: relative;
+}
+
+
+.map2{
+
+    position: absolute;
+left: 15%;
+
+top: 38.43%;
+bottom: 49.07%;
+width: 80%;
+
+font-family: 'Cuttoff pro';
+font-style: normal;
+font-weight: normal;
+font-size: 23px;
+line-height: 150%;
+/* or 150% */
+display: flex;
+align-items: center;
+letter-spacing: 0.08em;
+
+color: #FEFEFE;
+
+}
+ .map3{
+
+    position: absolute;
+    left: 15%;
+    
+    top: 68.8%;
+    bottom: 29.63%;
+    width: 80%;
+    
+    font-family: 'Gotham Pro';
+    font-style:normal;
+    font-weight:inherit;
+    font-size: 13px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    
+    color: #FEFEFE;
+
+ }
+
+ .map4{
+
+    position: absolute;
+    left: 15%;
+    
+    top: 71.67%;
+    
+    
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 96% */
+    display: 133%;
+    align-items: center;
+    
+    color: #FEFEFE;
+
+ }
+
+ .map5{
+
+
+    position: absolute;
+left: 15%;
+
+top: 77.59%;
+
+
+font-family: 'Gotham Pro' ;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* or 133% */
+display: 133%;
+align-items: center;
+
+color: #FEFEFE;
+
+ }
+
+ .map6{
+
+    position: absolute;
+    left: 15%;
+   
+    top: 87.96%;
+  
+    
+    font-family: 'Gotham Pro' ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 15px;
+    /* or 143% */
+    display: 143%;
+    align-items: center;
+    width: 70%;
+    
+    color: #FEFEFE; 
+
+ }
+
+.map7{
+         position: absolute;
+         z-index: 1;
+         width: 170px;
+         top: 80px;  
+         left: 17%;
+         
+
+}
+
+
+.GG{
+
+   position: relative;
+
+}
+
+
+@media (max-width: 720px) {
+   .info {
+      height: 50vh;
+   }
+}

@@ -1,0 +1,404 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Swiper demo</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
+        type="text/css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer@1.4.1/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="{% static 'kv/slider.css' %}" type="text/css">
+</head>
+
+<body>
+-->
+    
+
+
+
+    
+    <!-- Swiper -->
+    <section>
+    
+    
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <div class="image"></div>
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Фасады в<br> стиле <span>Лофт</span></div>
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt="" style="margin-left: 20px" ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="row">
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <div class="image-2"></div>
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Подземная <br><span>Парковка</span></div>
+                             <!--<div class="line"></div>-->
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="row">
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <div class="image-3"></div>
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Приватный двор<br><span>с детскими площадками</span></div>
+                            <!--<div class="line"></div>-->
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <div class="image-4"></div>
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Закрытый<br><span>охраняемый</span> двор</div>
+                          <!-- <div class="line"></div>--> 
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div  class="image-compare">
+                                    <img src=" {% static 'kv/s11.jpg' %}" class="image-compare-img"  alt="" />
+                                    <img src="{% static 'kv/s12.jpg' %}"  class="image-compare-img" alt="" />
+                                </div>
+
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Спальня</div>
+                          <!-- <div class="line"></div>--> 
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                </div>
+                <div class="swiper-slide">
+                <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div  class="image-compare">
+                                    <img src=" {% static 'kv/s21.jpg' %}"  class="image-compare-img" alt="" />
+                                    <img src="{% static 'kv/s22.jpg' %}"  class="image-compare-img" alt="" />
+                                </div>
+
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Гостиная комната</div>
+                          <!-- <div class="line"></div>--> 
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div  class="image-compare">
+                                    <img src=" {% static 'kv/s31.jpg' %}" class="image-compare-img" alt="" />
+                                    <img src="{% static 'kv/s32.jpg' %}" class="image-compare-img"  alt="" />
+                                </div>
+
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Кухня</div>
+                          <!-- <div class="line"></div>--> 
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="row">
+
+                        <div class="imgBox col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                                <div  class="image-compare">
+                                    <img src=" {% static 'kv/s41.jpg' %}" class="image-compare-img"  alt="" />
+                                    <img src="{% static 'kv/s42.jpg' %}"  class="image-compare-img"  alt="" />
+                                </div>
+
+                        </div>
+                        <div class="text col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                            <div ><img src=" {% static 'kv/logo1.png' %} " alt="" id='logoimg'></div>
+                            <div class="text-h">Прихожая</div>
+                          <!-- <div class="line"></div>--> 
+                            <div class="text-p box-4">Жилой квартал «Невский» грамотно интегрирован в городскую среду,
+                                без
+                                вмешательства в исторический облик улиц. Здесь можно в полной мере почувствовать, почему
+                                Ставрополь
+                                находится в рейтингах самых благоустроенных, зелёных и красивых городов России. В двух
+                                шагах —
+                                уютная каштановая аллея, проходящая через весь городской центр, — живописный маршрут для
+                                пеших
+                                прогулок до Центрального парка, Крепостной горы и к памятнику Ангелу-хранителю. Внутри
+                                самого
+                                квартала для отдыха жителей тоже раскинется благоустроенный бульвар в традициях южных
+                                городов.</div>
+                            <div class="arrows-slider">
+                                <a href="#"><img class="leftarrow" src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                                <a href="#"><img class="rightarrow" src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+    </section>
+
+  
+
+
+
+
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!--<div class="swiper-pagination"></div>-->
+    </div>
+
+
+
+<section class="docs ">
+    
+    <div class="docs-top">
+        <img src=" {% static 'kv/logo1.png' %} " alt="">
+        <p>Документация</p>
+    </div>
+
+    <div class="docs-middle center-lg center-md center-sm center-xs">
+        <img src="{% static 'kv/docs.png' %}" alt="" class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+        <img src="{% static 'kv/docs.png' %}" alt="" class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+        <img src="{% static 'kv/docs.png' %}" alt="" class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+    </div>
+
+    <div class="docs-bottom">
+
+            <div class="arrows-docs">
+                <a href="#"><img  src="{% static 'kv/leftarrow.png' %}" alt=""></a>
+                <a href="#"><img  src="{% static 'kv/rightarrow.png' %}" alt=""></a>
+            </div>
+    
+    </div>
+
+</section>
+
+
+<section class="docs ">
+   
+    <div class="docs-top">
+        <img src=" {% static 'kv/logo1.png' %} " alt="">
+        <p>Ход строительства Июнь 2021</p>
+    </div>
+
+    <div class="docs-middle center-lg center-md center-sm center-xs">
+        <video src="{% static 'kv/simplevideo.mp4' %}"></video>
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            allowTouchMove: false,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".rightarrow",
+                prevEl: ".leftarrow",
+            },
+        });
+    </script>
+
+
+    <script src="https://unpkg.com/image-compare-viewer@1.4.1/dist/image-compare-viewer.min.js"></script>
+
+    <script>
+        const viewers = document.querySelectorAll(".image-compare");
+  
+            viewers.forEach((element) => {
+            const options= 
+            {
+            controlColor: "#FFFFFF",
+            controlShadow: false,
+            addCircle: true,
+            addCircleBlur: true ,
+            smoothing: false
+            }
+            let view = new ImageCompare(element, options).mount();
+            });
+
+    </script>
+
+<!--
+</body>
+
+</html>
+-->

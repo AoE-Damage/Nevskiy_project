@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    
+
+
+    <!--Outside resources-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer@1.4.1/dist/image-compare-viewer.min.css">
+
+    <!--Page stylesStyles-->
+    <!--For index.html-->   <link rel="stylesheet" href=" {% static 'kv/assets/style.css' %}"> 
+    <!--For map.html-->     <link rel="stylesheet" href="{% static 'kv/css/map.css'%}" type="text/css">
+    <!--For slider.html-->  <link rel="stylesheet" href="{% static 'kv/css/slider.css' %}" type="text/css">
+
+    <title>Невский</title>
+</head>
+<body>
+    
+    {% include 'kv/index.html' %}
+
+    {% include 'kv/slider.html' %}
+   
+    {% include 'kv/map.html' %}
+
+</body>
+</html>
